@@ -127,6 +127,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  falcon
   guard-falcon
   guard-rspec
   passenger

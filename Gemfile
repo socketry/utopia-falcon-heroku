@@ -10,6 +10,10 @@ gem "bundler"
 
 gem "rack-freeze", "~> 1.2"
 
+group :production do
+	gem "falcon"
+end
+
 group :development do
 	# For `rake server`:
 	gem "guard-falcon", require: false
