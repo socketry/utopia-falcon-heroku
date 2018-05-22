@@ -1,1 +1,1 @@
-web: bundle exec falcon serve -b tcp://localhost:${PORT:-3000}
+web: bundle exec falcon --verbose serve -b tcp://localhost:${PORT:-3000}
