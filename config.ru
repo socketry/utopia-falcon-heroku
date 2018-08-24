@@ -18,8 +18,6 @@ use Utopia::Static, root: 'public'
 
 use Rack::Sendfile
 
-use Utopia::ContentLength
-
 use Utopia::Redirection::Rewrite,
 	'/' => '/welcome/index'
 
