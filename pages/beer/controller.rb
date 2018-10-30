@@ -39,7 +39,7 @@ on 'index' do |request|
 	rescue
 		puts "Remote end closed connection: #{$!}"
 	ensure
-		body.finish
+		body.close
 	end
 	
 	succeed! status: 200,
