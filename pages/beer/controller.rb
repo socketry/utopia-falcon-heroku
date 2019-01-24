@@ -35,6 +35,9 @@ on 'index' do |request|
 			body.write("<script>var child; while (child = document.body.firstChild) child.remove();</script>")
 		end
 		
+		code = File.read(__FILE__)
+		body.write("<h1>Source Code</h1>")
+		body.write("<pre><code>#{Trenni::Markup.escape_string code}</code></pre>")
 		body.write("</body></html>")
 	rescue
 		puts "Remote end closed connection: #{$!}"
