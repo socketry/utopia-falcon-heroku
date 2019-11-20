@@ -20,15 +20,20 @@ task :echo do
 		client = Async::HTTP::Client.new(endpoint)
 		
 		body = Async::HTTP::Body::Writable.new
-		response = client.get(endpoint.path, [], body)
 		
 		Async do
+			Async.logger.info(body) {"Waiting for input from user, flushing each line, press Ctrl-D to close request body."}
+			
 			while line = input.gets
+				Async.logger.info(body) {"Writing: #{line}"}
 				body.write(line)
 			end
 		ensure
+			Async.logger.info(body) {"Closing body..."}
 			body&.close
 		end
+		
+		response = client.post(endpoint.path, [], body)
 		
 		response.each do |chunk|
 			$stdout.puts chunk
