@@ -1,9 +1,9 @@
 
 source "https://rubygems.org"
 
-ruby "2.6.0"
+ruby "2.6.5"
 
-gem "utopia", "~> 2.5.0"
+gem "utopia", "~> 2.5"
 # gem "utopia-gallery"
 # gem "utopia-analytics"
 
@@ -27,10 +27,6 @@ group :development do
 	
 	# For `rspec` testing:
 	gem "rspec"
-	gem "simplecov"
+	gem "covered"
 end
 
-group :production do
-	# Used for passenger-config to restart server after deployment:
-	gem "passenger"
-end
