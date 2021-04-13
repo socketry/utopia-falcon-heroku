@@ -1,32 +1,33 @@
+# frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-ruby "3.0.0"
+ruby '3.0.1'
 
-gem "utopia", "~> 2.5"
-# gem "utopia-gallery"
-# gem "utopia-analytics"
-
-gem "rake"
-gem "bundler"
-
-gem "rack-freeze", "~> 1.2"
-
-group :production do
-	gem "falcon"
+group :preload do
+	gem 'utopia', '~> 2.18.4'
+	# gem 'utopia-gallery'
+	# gem 'utopia-analytics'
+	
+	gem 'variant'
 end
+
+gem 'rake'
+gem 'bake'
+gem 'bundler'
+gem 'rack-test'
 
 group :development do
-	# For `rake server`:
-	gem "guard-falcon", require: false
+	gem 'guard-falcon', require: false
 	gem 'guard-rspec', require: false
 	
-	# For `rake console`:
-	gem "pry"
-	gem "rack-test"
+	gem 'rspec'
+	gem 'covered'
 	
-	# For `rspec` testing:
-	gem "rspec"
-	gem "covered"
+	gem 'async-rspec'
+	gem 'benchmark-http'
 end
 
+group :production do
+	gem 'falcon'
+end
