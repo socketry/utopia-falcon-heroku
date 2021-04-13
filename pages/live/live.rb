@@ -66,7 +66,7 @@ module Live
 		
 		def render(builder)
 			builder.tag :span, onclick: forward do
-				builder.text(@data[:count])
+				builder.text("Add an image. (#{@data[:count]} images so far).")
 			end
 			
 			builder.tag :div do
