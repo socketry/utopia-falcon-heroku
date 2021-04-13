@@ -10,6 +10,8 @@ group :preload do
 	# gem 'utopia-analytics'
 	
 	gem 'variant'
+	
+	gem 'async-websocket'
 end
 
 gem 'rake'

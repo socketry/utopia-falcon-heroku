@@ -32,6 +32,10 @@ GEM
       rspec (~> 3.0)
       rspec-files (~> 1.0)
       rspec-memory (~> 1.0)
+    async-websocket (0.17.0)
+      async-http (~> 0.54)
+      async-io (~> 1.23)
+      protocol-websocket (~> 0.7.0)
     bake (0.15.0)
       samovar (~> 2.1)
     benchmark-http (0.14.0)
@@ -117,6 +121,9 @@ GEM
     protocol-http2 (0.14.2)
       protocol-hpack (~> 1.4)
       protocol-http (~> 0.18)
+    protocol-websocket (0.7.5)
+      protocol-http (~> 0.2)
+      protocol-http1 (~> 0.2)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -178,6 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   async-rspec
+  async-websocket
   bake
   benchmark-http
   bundler
