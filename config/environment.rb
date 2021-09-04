@@ -14,19 +14,17 @@ Trace::Provider(Async::Task) do
 		unless self.transient?
 			parent_context = self.trace_context
 		end
-
+		
 		Fiber.new do |*arguments|
 			set!
-
-			attributes = {annotation: self.annotation}
-
+			
+			self.trace_context = parent_context
+			
 			begin
-				trace('async.task', parent_context, attributes: attributes) do
-					@result = yield(self, *arguments)
-				end
+				@result = yield(self, *arguments)
 				@status = :complete
 				# Console.logger.debug(self) {"Task was completed with #{@children.size} children!"}
-			rescue Stop
+			rescue Async::Stop
 				stop!
 			rescue StandardError => error
 				fail!(error, false)
