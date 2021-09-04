@@ -37,3 +37,15 @@ Trace::Provider(Async::Task) do
 		end
 	end
 end
+
+require 'async/pool'
+
+Trace::Provider(Async::Pool::Controller) do
+	def acquire
+		trace('async.pool.acquire', attributes: {usage: self.usage_string}) {super}
+	end
+	
+	def create_resource
+		trace('async.pool.create_resource', attributes: {usage: self.usage_string}) {super}
+	end
+end
