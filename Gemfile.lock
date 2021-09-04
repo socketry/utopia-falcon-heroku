@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/socketry/trace
-  revision: 3e699d0b9c4d93d28452facc3e2fbd5f7bff85d4
+  revision: 62b406ddc498536b2599ed81b071108497f6d01f
   branch: datadog-integration
   specs:
     trace (0.6.0)
