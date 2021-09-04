@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
+gem "ddtrace", require: "ddtrace/auto_instrument"
 gem "trace", git: "https://github.com/socketry/trace", branch: "datadog-integration"
 gem "async-http", git: "https://github.com/socketry/async-http", branch: "tracing"
 

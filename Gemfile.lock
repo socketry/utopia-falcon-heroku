@@ -68,6 +68,9 @@ GEM
       console (~> 1.0)
       msgpack
       parser
+    ddtrace (0.52.0)
+      ffi (~> 1.0)
+      msgpack
     diff-lcs (1.4.4)
     falcon (0.39.2)
       async
@@ -205,6 +208,7 @@ DEPENDENCIES
   benchmark-http
   bundler
   covered
+  ddtrace
   falcon
   guard-falcon
   guard-rspec
