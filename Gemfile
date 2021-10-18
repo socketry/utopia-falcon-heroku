@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem "ddtrace", require: "ddtrace/auto_instrument"
-gem "trace", git: "https://github.com/socketry/trace", branch: "datadog-integration"
-gem "async-http", git: "https://github.com/socketry/async-http", branch: "tracing"
+gem "traces-backend-datadog"
+gem "async-http", git: "https://github.com/socketry/async-http", branch: "main"
 
 group :preload do
 	gem 'utopia', '~> 2.18.4'

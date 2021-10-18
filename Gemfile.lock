@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/socketry/async-http
-  revision: 6598e6fc2b10f1188c77ba22d91fcf4761e1b72d
-  branch: tracing
+  revision: cc94cdba797908cbe0ea1f4f59bc858ed26d3ecd
+  branch: main
   specs:
     async-http (0.56.5)
       async (>= 1.25)
@@ -10,14 +10,7 @@ GIT
       protocol-http (~> 0.22.0)
       protocol-http1 (~> 0.14.0)
       protocol-http2 (~> 0.14.0)
-      trace (~> 0.6.0)
-
-GIT
-  remote: https://github.com/socketry/trace
-  revision: 62b406ddc498536b2599ed81b071108497f6d01f
-  branch: datadog-integration
-  specs:
-    trace (0.6.0)
+      traces (~> 0.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -37,7 +30,7 @@ GEM
       async-http (~> 0.56)
     async-io (1.32.2)
       async
-    async-pool (0.3.8)
+    async-pool (0.3.9)
       async (>= 1.25)
     async-rest (0.12.4)
       async-http (~> 0.42)
@@ -52,7 +45,7 @@ GEM
       protocol-websocket (~> 0.7.0)
     bake (0.16.1)
       samovar (~> 2.1)
-    benchmark-http (0.14.1)
+    benchmark-http (0.15.0)
       async-await
       async-http (~> 0.54)
       async-io (~> 1.5)
@@ -68,7 +61,7 @@ GEM
       console (~> 1.0)
       msgpack
       parser
-    ddtrace (0.52.0)
+    ddtrace (0.53.0)
       ffi (~> 1.0)
       msgpack
     diff-lcs (1.4.4)
@@ -110,7 +103,7 @@ GEM
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    localhost (1.1.8)
+    localhost (1.1.9)
     lumberjack (1.2.8)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
@@ -119,7 +112,7 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0901)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     msgpack (1.4.2)
     nenv (0.3.0)
     nio4r (2.5.8)
@@ -178,6 +171,10 @@ GEM
     thor (1.1.0)
     thread-local (1.1.0)
     timers (4.3.3)
+    traces (0.4.1)
+    traces-backend-datadog (0.1.0)
+      ddtrace (~> 0.53)
+      traces (~> 0.4.0)
     trenni (3.13.1)
       rake-compiler
     trenni-sanitize (0.6.1)
@@ -215,7 +212,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec
-  trace!
+  traces-backend-datadog
   utopia (~> 2.18.4)
   variant
 
