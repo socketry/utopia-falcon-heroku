@@ -5,7 +5,9 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem "ddtrace", require: "ddtrace/auto_instrument"
+gem "traces"
 gem "traces-backend-datadog"
+gem "async", git: "https://github.com/socketry/async", branch: "stable-v1-traces"
 gem "async-http", git: "https://github.com/socketry/async-http", branch: "main"
 
 group :preload do
